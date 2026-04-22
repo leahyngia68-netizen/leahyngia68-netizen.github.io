@@ -1,0 +1,500 @@
+/* ============================================================
+   YANG LI — style.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Garamond", "EB Garamond", "Cormorant Garamond", "Times New Roman", serif;
+  color: #111;
+  background: #fafaf8;
+  display: flex;
+  min-height: 100vh;
+  opacity: 0;
+  animation: page-in 0.6s ease forwards;
+}
+
+@keyframes page-in {
+  to { opacity: 1; }
+}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-right: 0.5px solid #d8d5ce;
+  background: #fafaf8;
+  z-index: 100;
+}
+
+.nav-name {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #111;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.nav-links,
+.nav-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover        { opacity: 0.45; }
+nav a.active       { opacity: 0.35; }
+
+.nav-contact a {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #999;
+  text-transform: uppercase;
+}
+
+/* ── Main layout ─────────────────────────────────────────────── */
+main {
+  margin-left: 180px;
+  padding: 56px 72px 140px 72px;
+  max-width: 960px;
+  width: 100%;
+}
+
+/* ── Portfolio intro / hero ──────────────────────────────────── */
+.portfolio-intro {
+  padding-bottom: 80px;
+  border-bottom: 0.5px solid #d8d5ce;
+  margin-bottom: 80px;
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+}
+
+.portfolio-intro-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+.portfolio-intro-photo img {
+  width: 100%;
+  display: block;
+  filter: grayscale(12%);
+}
+
+.portfolio-intro-text { max-width: 460px; }
+
+.portfolio-intro-name {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.portfolio-intro-role {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 28px;
+}
+
+.portfolio-intro-bio {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.portfolio-intro-links {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.portfolio-intro-links a {
+  color: #999;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.portfolio-intro-links a:hover { opacity: 0.5; }
+
+/* ── Section headings ────────────────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 48px;
+}
+
+/* ── About page ──────────────────────────────────────────────── */
+.about-text { max-width: 620px; }
+.about-text p {
+  margin-bottom: 28px;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* ── Work items ──────────────────────────────────────────────── */
+.work-item {
+  margin-bottom: 96px;
+  padding-bottom: 96px;
+  border-bottom: 0.5px solid #d8d5ce;
+}
+.work-item:last-child {
+  border-bottom: none;
+}
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.work-title { font-size: 17px; }
+.work-year  { font-size: 13px; color: #999; letter-spacing: 0.04em; }
+
+.work-type {
+  font-size: 11px;
+  margin-bottom: 32px;
+  color: #aaa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.work-item img {
+  width: 100%;
+  display: block;
+  margin-bottom: 40px;
+  max-width: 660px;
+}
+
+.work-body p {
+  margin-bottom: 22px;
+  max-width: 660px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.work-body h3 {
+  font-size: 10px;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin: 40px 0 14px;
+}
+
+/* ── Metrics grid ────────────────────────────────────────────── */
+.work-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: #d8d5ce;
+  border: 0.5px solid #d8d5ce;
+  margin: 40px 0;
+  max-width: 660px;
+}
+
+.work-metric {
+  background: #fafaf8;
+  padding: 24px 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.work-metric.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.work-metric-value {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.work-metric-label {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Scroll reveal ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible   { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.06s; }
+.reveal-d2 { transition-delay: 0.13s; }
+.reveal-d3 { transition-delay: 0.20s; }
+.reveal-d4 { transition-delay: 0.27s; }
+
+/* ── Diagram base ────────────────────────────────────────────── */
+.diagram        { margin: 40px 0 48px; max-width: 660px; }
+.diagram-label  {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+/* ── Phase flow (4-step horizontal) ──────────────────────────── */
+.phase-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #d8d5ce;
+  border: 0.5px solid #d8d5ce;
+}
+
+.phase-step {
+  background: #fafaf8;
+  padding: 20px 16px 22px;
+  position: relative;
+}
+.phase-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #d8d5ce;
+  z-index: 2;
+}
+.phase-step:last-child::after { display: none; }
+
+.phase-num {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+.phase-name {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #222;
+}
+.phase-detail {
+  font-size: 11px;
+  color: #aaa;
+  line-height: 1.65;
+}
+
+/* ── Content framework matrix ────────────────────────────────── */
+.cf-matrix {
+  border: 0.5px solid #d8d5ce;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+.cf-row {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 0;
+  border-bottom: 0.5px solid #d8d5ce;
+}
+.cf-row:last-child { border-bottom: none; }
+
+.cf-funnel {
+  background: #f4f2ed;
+  padding: 16px 14px;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  border-right: 0.5px solid #d8d5ce;
+}
+
+.cf-cells {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: none;
+}
+.cf-cell {
+  padding: 16px 14px;
+  font-size: 13px;
+  font-style: italic;
+  color: #222;
+  border-right: 0.5px solid #d8d5ce;
+  border-bottom: none;
+}
+.cf-cell:last-child  { border-right: none; }
+
+/* ── Campaign arc (3-phase timeline) ─────────────────────────── */
+.campaign-arc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #d8d5ce;
+  border: 0.5px solid #d8d5ce;
+  max-width: 660px;
+}
+
+.arc-phase {
+  background: #fafaf8;
+  padding: 20px 16px 22px;
+}
+.arc-num {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+.arc-name {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: #222;
+}
+.arc-list {
+  list-style: none;
+  padding: 0;
+}
+.arc-list li {
+  font-size: 11px;
+  color: #aaa;
+  line-height: 1.75;
+  padding-left: 12px;
+  position: relative;
+}
+.arc-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #d8d5ce;
+}
+
+/* ── Research methodology (2×2 grid) ─────────────────────────── */
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #d8d5ce;
+  border: 0.5px solid #d8d5ce;
+  max-width: 560px;
+}
+
+.method-cell {
+  background: #fafaf8;
+  padding: 22px 18px;
+}
+.method-num {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+.method-name {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: #222;
+}
+.method-tool {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 0.04em;
+}
+
+/* ── Links ───────────────────────────────────────────────────── */
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #ccc;
+  transition: opacity 0.2s ease;
+}
+a:hover { opacity: 0.5; }
+
+.empty-note {
+  color: #bbb;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  body { flex-direction: column; }
+
+  nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px;
+    border-right: none;
+    border-bottom: 0.5px solid #d8d5ce;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 36px 24px 80px;
+  }
+
+  .portfolio-intro {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .portfolio-intro-photo { width: 140px; }
+
+  .phase-flow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .phase-step::after { display: none; }
+
+  .campaign-arc { grid-template-columns: 1fr; }
+  .cf-matrix { max-width: 100%; }
+  .method-grid { grid-template-columns: 1fr; }
+}
